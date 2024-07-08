@@ -12,7 +12,9 @@ import {
 } from './styledComponents'
 
 const TimelineView = props => {
-  const {timeLineItemsList} = props
+  const {timelineItemsList} = props
+  console.log(timelineItemsList)
+
   const renderTimeLineCard = item => {
     if (item.categoryId === 'PROJECT') {
       return <ProjectTimelineCard key={item.id} projectDetails={item} />
@@ -31,10 +33,10 @@ const TimelineView = props => {
           theme={{
             secondary: 'white',
           }}
-          items={timeLineItemsList}
+          items={timelineItemsList}
           mode="VERTICAL_ALTERNATING"
         >
-          {timeLineItemsList.map(eachItem => renderTimeLineCard(eachItem))}
+          {timelineItemsList.map(eachItem => renderTimeLineCard(eachItem))}
         </Chrono>
       </ResponsiveContainer>
     </TimelineContainer>
